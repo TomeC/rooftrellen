@@ -3,7 +3,7 @@ package com.wkr.tp.parser;
 import com.wkr.tp.Lexer;
 import com.wkr.tp.ast.LetStatement;
 import com.wkr.tp.ast.Program;
-import com.wkr.tp.ast.base.Statement;
+import com.wkr.tp.ast.base.AbstractStatement;
 import com.wkr.tp.enums.TokenTypeEnum;
 import com.wkr.tp.token.Token;
 
@@ -23,9 +23,9 @@ public class Parser {
     Program parseProgram() {
         Program program = new Program();
         while (!curTokenIs(TokenTypeEnum.EOF)) {
-            Statement statement = parseStatement();
-            if (statement != null) {
-                program.addStatement(statement);
+            AbstractStatement abstractStatement = parseStatement();
+            if (abstractStatement != null) {
+                program.addStatement(abstractStatement);
             }
         }
     }
@@ -33,7 +33,7 @@ public class Parser {
         return tokenTypeEnum.equalsCode(currToken.getTokenType());
     }
 
-    public Statement parseStatement() {
+    public AbstractStatement parseStatement() {
         switch (currToken.getTokenType()) {
             case LET:
                 return parseLetStatement();
@@ -43,7 +43,7 @@ public class Parser {
         return null;
     }
     public LetStatement parseLetStatement() {
-        Statement statement = new LetStatement(currToken);
+        AbstractStatement abstractStatement = new LetStatement(currToken);
         if (!expectPeek(TokenTypeEnum.IDENT)) {
 
         }

@@ -5,9 +5,9 @@ package com.wkr.tp.ast.base;
  * @Description: statement
  * @date 2023/11/27 19:46
  */
-public abstract class Statement implements Node {
+public abstract class AbstractStatement implements INode {
     @Override
-    public String tokenLiteral() {
+    public String getTokenLiteral() {
         return "";
     }
 }

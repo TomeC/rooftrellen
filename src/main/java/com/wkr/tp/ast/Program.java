@@ -1,22 +1,22 @@
 package com.wkr.tp.ast;
 
-import com.wkr.tp.ast.base.Node;
-import com.wkr.tp.ast.base.Statement;
+import com.wkr.tp.ast.base.INode;
+import com.wkr.tp.ast.base.AbstractStatement;
 
 import java.util.ArrayList;
 
 /**
  * @author wkr
- * @Description:
+ * @Description: { }
  * @date 2023/11/27 19:51
  */
-public class Program implements Node {
-    private ArrayList<Statement> statementList;
+public class Program implements INode {
+    private ArrayList<AbstractStatement> abstractStatementList;
 
     @Override
-    public String tokenLiteral() {
-        if (!statementList.isEmpty()) {
-            return statementList.get(0).tokenLiteral();
+    public String getTokenLiteral() {
+        if (!abstractStatementList.isEmpty()) {
+            return abstractStatementList.get(0).getTokenLiteral();
         } else {
             return "";
         }
@@ -27,24 +27,24 @@ public class Program implements Node {
         StringBuilder builder = new StringBuilder();
         builder.append("Program{\n");
         builder.append("statementList=");
-        for (Statement stm : statementList) {
+        for (AbstractStatement stm : abstractStatementList) {
             builder.append(stm.toString());
         }
         return builder.append("}\n").toString();
     }
 
     public Program() {
-        statementList = new ArrayList<>();
+        abstractStatementList = new ArrayList<>();
     }
 
-    public ArrayList<Statement> getStatementList() {
-        return statementList;
+    public ArrayList<AbstractStatement> getStatementList() {
+        return abstractStatementList;
     }
 
-    public void setStatementList(ArrayList<Statement> statementList) {
-        this.statementList = statementList;
+    public void setStatementList(ArrayList<AbstractStatement> abstractStatementList) {
+        this.abstractStatementList = abstractStatementList;
     }
-    public void addStatement(Statement statement) {
-        statementList.add(statement);
+    public void addStatement(AbstractStatement abstractStatement) {
+        abstractStatementList.add(abstractStatement);
     }
 }

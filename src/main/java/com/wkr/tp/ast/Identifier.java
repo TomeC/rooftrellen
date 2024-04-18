@@ -1,14 +1,14 @@
 package com.wkr.tp.ast;
 
-import com.wkr.tp.ast.base.Expression;
+import com.wkr.tp.ast.base.AbstractExpression;
 import com.wkr.tp.token.Token;
 
 /**
  * @author wangkun1-jk
- * @Description:
+ * @Description: a int
  * @date 2023/11/29 19:33
  */
-public class Identifier extends Expression {
+public class Identifier extends AbstractExpression {
     private Token token;
     private String value;
 
@@ -42,7 +42,7 @@ public class Identifier extends Expression {
     }
 
     @Override
-    public String tokenLiteral() {
+    public String getTokenLiteral() {
         return token.getLiteral();
     }
 

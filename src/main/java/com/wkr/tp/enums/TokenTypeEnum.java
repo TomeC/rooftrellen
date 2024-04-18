@@ -86,8 +86,6 @@ public enum TokenTypeEnum {
     BREAK(31, "BREAK"),
     // CONTINUE
     CONTINUE(32, "CONTINUE"),
-
-
     ;
 
     TokenTypeEnum(Integer code, String desc) {
@@ -95,8 +93,8 @@ public enum TokenTypeEnum {
         this.desc = desc;
     }
 
-    private Integer code;
-    private String desc;
+    private final Integer code;
+    private final String desc;
 
     public Integer getCode() {
         return code;

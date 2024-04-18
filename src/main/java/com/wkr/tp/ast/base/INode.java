@@ -5,10 +5,10 @@ package com.wkr.tp.ast.base;
  * @Description: node
  * @date 2023/11/27 19:29
  */
-public interface Node {
+public interface INode {
     /**
-     *
-     * @return token literal
+     * 返回token字符
+     * @return String
      */
-    String tokenLiteral();
+    String getTokenLiteral();
 }

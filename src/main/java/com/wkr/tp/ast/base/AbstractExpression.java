@@ -7,9 +7,9 @@ package com.wkr.tp.ast.base;
  * @Description: expression
  * @date 2023/11/27 19:45
  */
-public abstract class Expression implements Node {
+public abstract class AbstractExpression implements INode {
     @Override
-    public String tokenLiteral() {
+    public String getTokenLiteral() {
         return "";
     }
 }
