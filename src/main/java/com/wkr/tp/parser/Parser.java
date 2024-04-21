@@ -28,6 +28,8 @@ public class Parser {
                 program.addStatement(abstractStatement);
             }
         }
+        // todo
+        return program;
     }
     boolean curTokenIs(TokenTypeEnum tokenTypeEnum) {
         return tokenTypeEnum.equalsCode(currToken.getTokenType());
@@ -43,10 +45,12 @@ public class Parser {
         return null;
     }
     public LetStatement parseLetStatement() {
-        AbstractStatement abstractStatement = new LetStatement(currToken);
-        if (!expectPeek(TokenTypeEnum.IDENT)) {
-
-        }
+//        AbstractStatement abstractStatement = new LetStatement(currToken);
+//        if (!expectPeek(TokenTypeEnum.IDENT)) {
+//
+//        }
+        // todo
+        return null;
     }
 
     private boolean expectPeek(TokenTypeEnum tokenTypeEnum) {
@@ -66,7 +70,7 @@ public class Parser {
 
     private void nextToken() {
         currToken = peekToken;
-        peekToken = lexer.nextToken();
+//        peekToken = lexer.nextToken();
     }
 
     private boolean peekTokenIs(TokenTypeEnum tokenTypeEnum) {
