@@ -2,6 +2,8 @@ package com.wkr.tp.enums;
 
 import java.security.InvalidParameterException;
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * @author wkr
@@ -88,6 +90,7 @@ public enum TokenTypeEnum {
     CONTINUE(32, "CONTINUE"),
     ;
 
+
     TokenTypeEnum(Integer code, String desc) {
         this.code = code;
         this.desc = desc;
@@ -110,5 +113,27 @@ public enum TokenTypeEnum {
         return Arrays.stream(TokenTypeEnum.values()).filter(item ->
                 item.getCode().equals(type)
         ).findFirst().orElseThrow(() -> new InvalidParameterException("type not found"));
+    }
+
+    @Override
+    public String toString() {
+        return "TokenTypeEnum{" +
+                "code=" + code +
+                ", desc='" + desc + '\'' +
+                '}';
+    }
+
+
+    public static TokenTypeEnum lookupIdent(String ident) {
+        Map<String, TokenTypeEnum> keywords = new HashMap<>();
+        keywords.put("fn", TokenTypeEnum.FUNCTION);
+        keywords.put("let", TokenTypeEnum.LET);
+        keywords.put("true", TokenTypeEnum.TRUE);
+        keywords.put("false", TokenTypeEnum.FALSE);
+        keywords.put("if", TokenTypeEnum.IF);
+        keywords.put("else", TokenTypeEnum.ELSE);
+        keywords.put("return", TokenTypeEnum.RETURN);
+
+        return keywords.getOrDefault(ident, TokenTypeEnum.IDENT);
     }
 }

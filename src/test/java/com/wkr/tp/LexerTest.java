@@ -13,6 +13,6 @@ public class LexerTest {
         String first = "int age = 3;";
         logger.info("first test {}", first);
         Lexer lexer = new Lexer(first);
-
+        System.out.println(lexer);
     }
 }
