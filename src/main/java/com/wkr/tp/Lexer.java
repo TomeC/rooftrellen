@@ -114,8 +114,8 @@ public class Lexer {
             case '"':
                 token = new Token(TokenTypeEnum.STRING, readString());
                 break;
-            case '0':
-                token = new Token(TokenTypeEnum.STRING, "");
+            case 0:
+                token = new Token(TokenTypeEnum.EOF, "");
                 break;
             default:
                 if (isLetter(currentChar)) {
