@@ -17,33 +17,23 @@ public class Identifier extends AbstractExpression {
         this.value = value;
     }
 
-    public Token getToken() {
-        return token;
-    }
-
-    public void setToken(Token token) {
-        this.token = token;
-    }
-
-    public String getValue() {
-        return value;
-    }
-
-    public void setValue(String value) {
-        this.value = value;
-    }
 
     @Override
     public String toString() {
-        return "Identifier{" +
-                "token=" + token +
-                ", value='" + value + '\'' +
-                '}';
+        return value;
     }
 
     @Override
     public String getTokenLiteral() {
         return token.getLiteral();
+    }
+
+    public Token getToken() {
+        return token;
+    }
+
+    public String getValue() {
+        return value;
     }
 
 }

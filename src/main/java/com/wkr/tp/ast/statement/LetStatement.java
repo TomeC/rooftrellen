@@ -1,5 +1,6 @@
-package com.wkr.tp.ast;
+package com.wkr.tp.ast.statement;
 
+import com.wkr.tp.ast.Identifier;
 import com.wkr.tp.ast.base.AbstractExpression;
 import com.wkr.tp.ast.base.AbstractStatement;
 import com.wkr.tp.token.Token;
@@ -36,5 +37,29 @@ public class LetStatement extends AbstractStatement {
     @Override
     public String getTokenLiteral() {
         return token.getLiteral();
+    }
+
+    public Identifier getName() {
+        return name;
+    }
+
+    public void setName(Identifier name) {
+        this.name = name;
+    }
+
+    public AbstractExpression getValue() {
+        return value;
+    }
+
+    public void setValue(AbstractExpression value) {
+        this.value = value;
+    }
+
+    public Token getToken() {
+        return token;
+    }
+
+    public void setToken(Token token) {
+        this.token = token;
     }
 }

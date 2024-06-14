@@ -1,4 +1,4 @@
-package com.wkr.tp.ast;
+package com.wkr.tp.ast.expression;
 
 import com.wkr.tp.ast.base.AbstractExpression;
 import com.wkr.tp.token.Token;
@@ -32,8 +32,9 @@ public class CallExpression extends AbstractExpression {
         sb.append('(');
         for (AbstractExpression expression : argumentList) {
             sb.append(expression.toString())
-                    .append(',');
+                    .append(", ");
         }
+        sb.deleteCharAt(sb.length()-1);
         sb.setCharAt(sb.length()-1, ')');
         return sb.toString();
     }
@@ -42,16 +43,8 @@ public class CallExpression extends AbstractExpression {
         return token;
     }
 
-    public void setToken(Token token) {
-        this.token = token;
-    }
-
     public AbstractExpression getFunction() {
         return function;
-    }
-
-    public void setFunction(AbstractExpression function) {
-        this.function = function;
     }
 
     public List<AbstractExpression> getArgumentList() {

@@ -1,4 +1,4 @@
-package com.wkr.tp.ast;
+package com.wkr.tp.ast.statement;
 
 import com.wkr.tp.ast.base.AbstractExpression;
 import com.wkr.tp.ast.base.AbstractStatement;

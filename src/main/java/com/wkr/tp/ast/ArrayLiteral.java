@@ -30,18 +30,15 @@ public class ArrayLiteral extends AbstractExpression {
         sb.append('[');
         for (AbstractExpression expression : elementList) {
             sb.append(expression.toString());
-            sb.append(',');
+            sb.append(", ");
         }
+        sb.deleteCharAt(sb.length()-1);
         sb.setCharAt(sb.length()-1, ']');
         return sb.toString();
     }
 
     public Token getToken() {
         return token;
-    }
-
-    public void setToken(Token token) {
-        this.token = token;
     }
 
     public List<AbstractExpression> getElementList() {

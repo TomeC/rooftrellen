@@ -1,11 +1,11 @@
 package com.wkr.tp.ast.expression;
 
-import com.wkr.tp.ast.BlockStatement;
+import com.wkr.tp.ast.statement.BlockStatement;
 import com.wkr.tp.ast.base.AbstractExpression;
 import com.wkr.tp.token.Token;
 
 /**
- * @author wangkun1-jk
+ * @author wkr
  * @Description: if (expression) {blockStatement} else {blockStatement}
  * @date 2024/4/10 11:31
  */
@@ -27,7 +27,7 @@ public class IfExpression extends AbstractExpression {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append(token.toString())
+        sb.append("if")
                 .append(condition.toString())
                 .append(consequenceStatement.toString());
         if (alternativeStatement != null) {

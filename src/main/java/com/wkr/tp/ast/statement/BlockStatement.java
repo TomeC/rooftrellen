@@ -1,8 +1,9 @@
-package com.wkr.tp.ast;
+package com.wkr.tp.ast.statement;
 
 import com.wkr.tp.ast.base.AbstractStatement;
 import com.wkr.tp.token.Token;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -22,14 +23,17 @@ public class BlockStatement extends AbstractStatement {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
+        sb.append('{');
         for (AbstractStatement statement : statementList) {
             sb.append(statement.toString());
         }
+        sb.append('}');
         return sb.toString();
     }
 
     public BlockStatement(Token token) {
         this.token = token;
+        statementList = new ArrayList<>();
     }
 
     public Token getToken() {

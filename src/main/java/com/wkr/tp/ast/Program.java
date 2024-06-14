@@ -25,12 +25,10 @@ public class Program implements INode {
     @Override
     public String toString() {
         StringBuilder builder = new StringBuilder();
-        builder.append("Program{\n");
-        builder.append("statementList=");
         for (AbstractStatement stm : abstractStatementList) {
             builder.append(stm.toString());
         }
-        return builder.append("}\n").toString();
+        return builder.toString();
     }
 
     public Program() {

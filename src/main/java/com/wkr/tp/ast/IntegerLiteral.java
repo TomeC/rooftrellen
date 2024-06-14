@@ -4,18 +4,13 @@ import com.wkr.tp.ast.base.AbstractExpression;
 import com.wkr.tp.token.Token;
 
 /**
- * @author wangkun1-jk
- * @Description: !exp or a>b
- * @date 2024/4/7 19:19
+ * @author wkr
+ * @description
+ * @date 2024/6/9
  */
-public class BooleanExpression extends AbstractExpression {
+public class IntegerLiteral extends AbstractExpression {
     private Token token;
-    private boolean value;
-
-    public BooleanExpression(Token token, boolean b) {
-        this.token = token;
-        value =b;
-    }
+    private long value;
 
     @Override
     public String getTokenLiteral() {
@@ -24,7 +19,16 @@ public class BooleanExpression extends AbstractExpression {
 
     @Override
     public String toString() {
-        return token.getLiteral();
+        return String.valueOf(value);
+    }
+
+    public IntegerLiteral(Token token, long value) {
+        this.token = token;
+        this.value = value;
+    }
+
+    public IntegerLiteral(Token token) {
+        this.token = token;
     }
 
     public Token getToken() {
@@ -35,11 +39,11 @@ public class BooleanExpression extends AbstractExpression {
         this.token = token;
     }
 
-    public boolean isValue() {
+    public long getValue() {
         return value;
     }
 
-    public void setValue(boolean value) {
+    public void setValue(long value) {
         this.value = value;
     }
 }

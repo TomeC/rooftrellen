@@ -1,6 +1,7 @@
 package com.wkr.tp.ast;
 
 import com.wkr.tp.ast.base.AbstractExpression;
+import com.wkr.tp.ast.statement.BlockStatement;
 import com.wkr.tp.token.Token;
 
 import java.util.List;
@@ -35,7 +36,7 @@ public class FunctionLiteral extends AbstractExpression  {
         }
         sb.setCharAt(sb.length()-1, ')');
         sb.append(body.toString());
-        return super.toString();
+        return sb.toString();
     }
 
     public Token getToken() {
