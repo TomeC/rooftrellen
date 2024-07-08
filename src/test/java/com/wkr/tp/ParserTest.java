@@ -1,11 +1,9 @@
 package com.wkr.tp;
 
-import com.wkr.tp.ast.FunctionLiteral;
-import com.wkr.tp.ast.Identifier;
-import com.wkr.tp.ast.IntegerLiteral;
+import com.wkr.tp.ast.expression.FunctionLiteral;
+import com.wkr.tp.ast.expression.Identifier;
+import com.wkr.tp.ast.expression.IntegerLiteral;
 import com.wkr.tp.ast.Program;
-import com.wkr.tp.ast.base.AbstractExpression;
-import com.wkr.tp.ast.base.AbstractStatement;
 import com.wkr.tp.ast.expression.BooleanExpression;
 import com.wkr.tp.ast.expression.IfExpression;
 import com.wkr.tp.ast.expression.InfixExpression;
@@ -18,7 +16,6 @@ import com.wkr.tp.parser.Parser;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.javatuples.Pair;
-import org.javatuples.Tuple;
 import org.junit.Assert;
 import org.junit.Test;
 

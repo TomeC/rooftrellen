@@ -1,16 +1,16 @@
-package com.wkr.tp.ast;
+package com.wkr.tp.ast.expression;
 
 import com.wkr.tp.ast.base.AbstractExpression;
 import com.wkr.tp.token.Token;
 
 /**
  * @author wkr
- * @description
+ * @description "hello"
  * @date 2024/6/9
  */
-public class IntegerLiteral extends AbstractExpression {
+public class StringLiteral extends AbstractExpression {
+    private String value;
     private Token token;
-    private long value;
 
     @Override
     public String getTokenLiteral() {
@@ -19,16 +19,20 @@ public class IntegerLiteral extends AbstractExpression {
 
     @Override
     public String toString() {
-        return String.valueOf(value);
+        return token.getLiteral();
     }
 
-    public IntegerLiteral(Token token, long value) {
-        this.token = token;
+    public StringLiteral(Token token, String value) {
         this.value = value;
+        this.token = token;
     }
 
-    public IntegerLiteral(Token token) {
-        this.token = token;
+    public String getValue() {
+        return value;
+    }
+
+    public void setValue(String value) {
+        this.value = value;
     }
 
     public Token getToken() {
@@ -37,13 +41,5 @@ public class IntegerLiteral extends AbstractExpression {
 
     public void setToken(Token token) {
         this.token = token;
-    }
-
-    public long getValue() {
-        return value;
-    }
-
-    public void setValue(long value) {
-        this.value = value;
     }
 }

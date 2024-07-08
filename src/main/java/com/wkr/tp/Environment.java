@@ -27,7 +27,7 @@ public class Environment {
         }
         return null;
     }
-    public Environment newEnclosedEnv(Environment outer) {
+    public static Environment newEnclosedEnv(Environment outer) {
         Environment env = new Environment();
         env.outer = outer;
         return env;

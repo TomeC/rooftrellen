@@ -1,6 +1,6 @@
 package com.wkr.tp.ast.statement;
 
-import com.wkr.tp.ast.Identifier;
+import com.wkr.tp.ast.expression.Identifier;
 import com.wkr.tp.ast.base.AbstractExpression;
 import com.wkr.tp.ast.base.AbstractStatement;
 import com.wkr.tp.token.Token;
