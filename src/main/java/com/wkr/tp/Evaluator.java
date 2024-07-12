@@ -37,10 +37,10 @@ public class Evaluator {
             if (isError(val)) {
                 return val;
             }
-            return val;
+            return new ReturnValue(val);
         }
         if (node instanceof LetStatement) {
-            RtObject val = eval(node, env);
+            RtObject val = eval(((LetStatement) node).getValue(), env);
             if (isError(val)) {
                 return val;
             }
@@ -173,7 +173,7 @@ public class Evaluator {
             return identifier;
         }
         // todo builtin
-        return new RtError("idetifier not founf:"+node.getValue());
+        return new RtError("identifier not found: "+node.getValue());
     }
 
     private RtObject evalIfExpression(IfExpression node, Environment env) {
@@ -219,10 +219,10 @@ public class Evaluator {
             }
         }
         if (left.getType() != right.getType()) {
-            return new RtError("type mismatch:"+RtObject.objectTypeValue(left.getType())+" "+op+" "
+            return new RtError("type mismatch: "+RtObject.objectTypeValue(left.getType())+" "+op+" "
                             +RtObject.objectTypeValue(right.getType()));
         }
-        return new RtError("unknown operator "+RtObject.objectTypeValue(left.getType())+" "+op+" "
+        return new RtError("unknown operator: "+RtObject.objectTypeValue(left.getType())+" "+op+" "
                 +RtObject.objectTypeValue(right.getType()));
 
     }

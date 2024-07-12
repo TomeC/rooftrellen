@@ -256,7 +256,7 @@ public class Parser {
         try {
             leftExp = (AbstractExpression) method.invoke(this);
         } catch (IllegalAccessException | InvocationTargetException e) {
-            logger.error("get leftExp error ", e);
+            logger.error("get leftExp error {}", errors, e);
             return null;
         }
         while (!peekTokenIs(TokenTypeEnum.SEMICOLON) && precedence.lt(peekPrecedence())) {

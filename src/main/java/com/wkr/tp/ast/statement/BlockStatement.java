@@ -23,11 +23,9 @@ public class BlockStatement extends AbstractStatement {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append('{');
         for (AbstractStatement statement : statementList) {
             sb.append(statement.toString());
         }
-        sb.append('}');
         return sb.toString();
     }
 
