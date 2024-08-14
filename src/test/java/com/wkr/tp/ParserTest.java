@@ -3,7 +3,7 @@ package com.wkr.tp;
 import com.wkr.tp.ast.expression.FunctionLiteral;
 import com.wkr.tp.ast.expression.Identifier;
 import com.wkr.tp.ast.expression.IntegerLiteral;
-import com.wkr.tp.ast.Program;
+import com.wkr.tp.ast.program.Program;
 import com.wkr.tp.ast.expression.BooleanExpression;
 import com.wkr.tp.ast.expression.IfExpression;
 import com.wkr.tp.ast.expression.InfixExpression;
@@ -43,7 +43,7 @@ public class ParserTest {
     @Test
     public void letStatementsTest() throws Exception {
         {
-            String sc = "let x = 5;";
+            String sc = "{let x = 5;}";
             Program program = parseProgram(sc);
             LetStatement letStatement = (LetStatement) program.getStatementList().get(0);
             logger.info("letStatement={}", letStatement);
@@ -244,5 +244,4 @@ public class ParserTest {
 
         Assert.assertEquals(functionLiteral.getBody().getStatementList().get(0).toString(), "(x + y)");
     }
-
 }

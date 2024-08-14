@@ -1,6 +1,6 @@
 package com.wkr.tp;
 
-import com.wkr.tp.ast.Program;
+import com.wkr.tp.ast.program.Program;
 import com.wkr.tp.ast.base.AbstractExpression;
 import com.wkr.tp.ast.base.AbstractStatement;
 import com.wkr.tp.ast.base.INode;

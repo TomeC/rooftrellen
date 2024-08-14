@@ -1,14 +1,11 @@
 package com.wkr.tp.parser;
 
 import com.wkr.tp.Lexer;
-import com.wkr.tp.ast.*;
 import com.wkr.tp.ast.base.AbstractExpression;
 import com.wkr.tp.ast.base.AbstractStatement;
 import com.wkr.tp.ast.expression.*;
-import com.wkr.tp.ast.statement.BlockStatement;
-import com.wkr.tp.ast.statement.ExpressionStatement;
-import com.wkr.tp.ast.statement.LetStatement;
-import com.wkr.tp.ast.statement.ReturnStatement;
+import com.wkr.tp.ast.program.Program;
+import com.wkr.tp.ast.statement.*;
 import com.wkr.tp.enums.PrecedenceEnum;
 import com.wkr.tp.enums.TokenTypeEnum;
 import com.wkr.tp.token.Token;
@@ -306,7 +303,6 @@ public class Parser {
                 return parseReturnStatement();
             default:
                 return parseExpressionStatement();
-
         }
     }
 

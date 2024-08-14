@@ -1,12 +1,11 @@
 package com.wkr.tp;
 
-import com.wkr.tp.ast.Program;
+import com.wkr.tp.ast.program.Program;
 import com.wkr.tp.object.*;
 import com.wkr.tp.parser.Parser;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.javatuples.Pair;
-import org.javatuples.Tuple;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -230,7 +229,7 @@ public class EvalTest {
     }
     @Test
     public void enclosingEnvTest() {
-        String input = "(\n" +
+        String input = "\n" +
                 "        let first = 10;\n" +
                 "        let second = 10;\n" +
                 "        let third = 10;\n" +
@@ -242,9 +241,19 @@ public class EvalTest {
                 "        };\n" +
                 "\n" +
                 "        ourFunction(20) + first + second;\n" +
-                "\t)";
+                "\t";
 
         RtObject val = testVal(input);
         Assert.assertEquals(((RtInteger) val).getValue(), 70);
+    }
+    @Test
+    public void envTest() {
+        Lexer l = new Lexer("let x = add(1)");
+        Parser p = new Parser(l);
+        Program program = p.parseProgram();
+        Evaluator evaluator = new Evaluator();
+        Environment environment = new Environment();
+        environment.set("add", );
+        RtObject val = evaluator.eval(program, environment);
     }
 }

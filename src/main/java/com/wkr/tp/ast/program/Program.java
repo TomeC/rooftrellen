@@ -1,4 +1,4 @@
-package com.wkr.tp.ast;
+package com.wkr.tp.ast.program;
 
 import com.wkr.tp.ast.base.INode;
 import com.wkr.tp.ast.base.AbstractStatement;

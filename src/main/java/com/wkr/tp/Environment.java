@@ -13,6 +13,7 @@ import java.util.Map;
 public class Environment {
     private Map<String, RtObject> store = new HashMap<>();
     private Environment outer;
+
     public RtObject set(String name, RtObject val) {
         store.put(name, val);
         return val;
@@ -31,21 +32,5 @@ public class Environment {
         Environment env = new Environment();
         env.outer = outer;
         return env;
-    }
-
-    public Map<String, RtObject> getStore() {
-        return store;
-    }
-
-    public void setStore(Map<String, RtObject> store) {
-        this.store = store;
-    }
-
-    public Environment getOuter() {
-        return outer;
-    }
-
-    public void setOuter(Environment outer) {
-        this.outer = outer;
     }
 }
